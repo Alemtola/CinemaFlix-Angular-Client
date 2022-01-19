@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
+import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+
 
 
 //Declaring the api url that will provide data for the client app
@@ -24,6 +24,14 @@ export class UserRegistrationService {
     );
   }
 
+  // Making the api call for the user login endpoint
+  public userLogin(userDetails: any): Observable<any> {
+    console.log(userDetails);
+    return this.http.post(apiUrl + 'users', userDetails).pipe(
+    catchError(this.handleError)
+    );
+  }
+
   // to get all movies
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
@@ -31,7 +39,6 @@ export class UserRegistrationService {
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
-      map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -45,7 +52,6 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -59,7 +65,7 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      
       catchError(this.handleError)
     );
   }
@@ -73,7 +79,7 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      
       catchError(this.handleError)
     );
   }
@@ -87,7 +93,7 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      
       catchError(this.handleError)
     );
   }
@@ -101,7 +107,7 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      
       catchError(this.handleError)
     );
   }
@@ -118,7 +124,7 @@ export class UserRegistrationService {
             Authorization: 'Bearer ' + token,
           })
       }).pipe(
-        map(this.extractResponseData),
+        
         catchError(this.handleError)
       );
   }
@@ -133,7 +139,7 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      
       catchError(this.handleError)
     );
   }
@@ -148,7 +154,7 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      
       catchError(this.handleError)
     );
   }
@@ -163,7 +169,7 @@ export class UserRegistrationService {
           Authorization: 'Bearer ' + token,
         })
     }).pipe(
-      map(this.extractResponseData),
+      
       catchError(this.handleError)
     );
   }
