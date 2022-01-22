@@ -11,6 +11,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +25,14 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { GenreComponent } from './genre/genre.component';
+import { DirectorComponent } from './director/director.component';
+import { DescriptionComponent } from './description/description.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { ProfileDeleteComponent } from './profile-delete/profile-delete.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -33,7 +46,15 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    GenreComponent,
+    DirectorComponent,
+    DescriptionComponent,
+    UserProfileComponent,
+    ProfileEditComponent,
+    ProfileDeleteComponent,
+    FavouritesComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +69,12 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatSnackBarModule,
     RouterModule.forRoot(appRoutes),
-    MatIconModule
+    MatIconModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
