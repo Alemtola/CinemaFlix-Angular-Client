@@ -1,0 +1,46 @@
+
+.mat-toolbar { 
+  background-color: #50051e; 
+  position: fixed;
+}
+
+#logo {
+  font-size: x-large;
+}
+
+.main-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #1a1818;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.content-wrapper{
+  margin-top: 200px;
+  text-align: center;
+}
+
+.title{
+  font-weight: bold;
+  font-size: x-large;
+  color: #ffffff;
+}
+
+.button-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.mat-raised-button{
+  margin-top: 40px;
+  background-color:#50051e;
+  color: #ffffff;
+  width: 150px;
+  height: 50px;
+  font-size: medium;
+}
