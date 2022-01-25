@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Users need to register first in the welcome page.
 
-<img  alt="welome page" src="./src/assets/wecomepage.png">
+![welcome](src/assets/wecomepage.PNG)
 
 ## Development server
 
