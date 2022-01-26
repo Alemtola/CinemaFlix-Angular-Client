@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { FavouritesComponent } from '../favourites/favourites.component';
 
 @Component({
   selector: 'app-navigation',
@@ -11,13 +12,9 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
-  isHandset: Observable<BreakpointState> = this.breakpointObserver
-    .observe(Breakpoints.Handset);
-
-  componentDisplayed: String = 'movies';
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
+    public dialog: MatDialog,
     public router: Router,
     public snackBar: MatSnackBar
   ) { }
@@ -25,7 +22,28 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeComponentDisplayed(name: string): void { this.componentDisplayed = name }
+  /**
+   * opens modal with user details
+   */
+   movies(): void {
+    this.router.navigate(['movies']);
+  }
+
+  /**
+   * Navigates to the profile page.
+   */
+  goToProfile(): void {
+    this.dialog.open(UserProfileComponent, {
+      width: '500px'
+    } );
+  }
+
+  goToFavourites(): void {
+    this.dialog.open(FavouritesComponent, {
+      width: '100%'
+    } );
+  }
+
 
   logout(): void {
     localStorage.clear(); // Clears the local storage so the logged out user can no longer use protected routes
