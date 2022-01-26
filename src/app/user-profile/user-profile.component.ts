@@ -5,6 +5,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
  import { Router } from '@angular/router';
  import { ProfileEditComponent } from '../profile-edit/profile-edit.component';
  import { ProfileDeleteComponent } from '../profile-delete/profile-delete.component';
+ import { FavouritesComponent } from '../favourites/favourites.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -47,6 +48,12 @@ export class UserProfileComponent implements OnInit {
       });
     });
     return this.favMovies;
+  }
+
+  openFavouritesDialog(): void {
+    this.dialog.open(FavouritesComponent, {
+      width: '100%',
+    })
   }
 
   // Opens a dialog holding a form to edit the user's info

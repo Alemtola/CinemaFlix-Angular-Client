@@ -1,8 +1,8 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      <h2>Howdy, {{ user.Username }}</h2></mat-card-title
-    >
+      <h2>Your Profile</h2>
+    </mat-card-title>
   </mat-card-header>
   <mat-card-content class="card-content">
     <p><b>Username</b>: {{ user.Username }}</p>
@@ -21,6 +21,9 @@
     </button>
     <button mat-raised-button color="warn" (click)="deregisterUser()">
       Delete Profile
+    </button>
+    <button mat-raised-button color="warn" (click)="openFavouritesDialog()">
+      Favourite Movies
     </button>
   </mat-card-actions>
 </mat-card>
