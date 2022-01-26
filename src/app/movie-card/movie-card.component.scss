@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.background {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(180deg, #474040c2,#571d1d );
+}
+
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 25px;
+  margin-right: 25px;
+  
+ 
+}
+
+.mat-card {
+  width: 280px;
+  margin: 15px;
+  background-color: #50051e;
+  color: white;
+}
+
+.mat-card-header {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movie-img {
+  width: 265px;
+}
+
+button:hover {
+  color: rgb(53, 49, 49);
+}
